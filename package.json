@@ -1,0 +1,66 @@
+{
+    "name": "canvas-td",
+    "displayName": "Canvas TD",
+    "version": "1.0.0",
+    "description": "Tower defense game adapted to run on Lampix",
+    "author": {
+        "email": "catalin.piscureanu@gmail.com",
+        "name": "Catalin Piscureanu"
+    },
+    "lampixConfig": {
+        "lampixVersion": ">= 2.0.0",
+        "showInAppSwitcher": true
+    },
+    "scripts": {
+        "build": "webpack --config internals/webpack.prod.js --progress --colors",
+        "build:version:patch": "npm version patch && npm run build",
+        "build:version:minor": "npm version minor && npm run build",
+        "build:version:major": "npm version major && npm run build",
+        "bundle:stats": "webpack --config internals/webpack.prod.js --profile --json > bundleStats.json && webpack-bundle-analyzer bundleStats.json",
+        "start": "webpack-dev-server -d --inline --hot --config internals/webpack.dev.js",
+        "precommit": "lint-staged"
+    },
+    "lint-staged": {
+        "*.js": [
+            "eslint --fix --ignore-pattern internals/",
+            "git add"
+        ]
+    },
+    "license": "ISC",
+    "dependencies": {
+        "@babel/runtime": "^7.2.0",
+        "@lampix/core": "^1.0.0",
+        "@lampix/dom": "^1.2.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.1.2",
+        "@babel/plugin-proposal-class-properties": "^7.1.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+        "@babel/plugin-transform-regenerator": "^7.0.0",
+        "@babel/plugin-transform-runtime": "^7.2.0",
+        "@babel/preset-env": "^7.1.0",
+        "babel-eslint": "^8.2.6",
+        "babel-loader": "^8.0.4",
+        "clean-webpack-plugin": "^1.0.0",
+        "copy-webpack-plugin": "^4.6.0",
+        "css-loader": "^1.0.1",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb-base": "^12.1.0",
+        "eslint-plugin-import": "^2.14.0",
+        "file-loader": "^2.0.0",
+        "html-loader": "^0.5.5",
+        "html-webpack-plugin": "^3.2.0",
+        "husky": "^0.14.3",
+        "image-webpack-loader": "^4.5.0",
+        "lint-staged": "^6.1.1",
+        "mini-css-extract-plugin": "^0.4.4",
+        "node-sass": "^4.10.0",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.1",
+        "webpack": "^4.25.1",
+        "webpack-bundle-analyzer": "^3.0.3",
+        "webpack-cli": "^3.1.2",
+        "webpack-dev-server": "^3.1.10",
+        "zip-webpack-plugin": "^3.0.0"
+    }
+}
