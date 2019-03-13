@@ -94,7 +94,7 @@ ui.action.scores = function () {
       out += '<li>' +
         '<a>' + new Date(r.date).toDateString() + '</a> ' +
         r.score + ' ☠' + r.kills + ' $' + r.spent +
-      '</li>';
+        '</li>';
     });
 
     $("pages-scores-local-" + map.toLowerCase()).innerHTML = out;
@@ -205,7 +205,7 @@ ui.action.refresh = function () {
 
     $("control-manage-sell").innerHTML = "Sell<br>$" + Math.round(turret.cost * 0.7);
 
-    $("control-manage-stats").innerHTML = turret.kills + " kills<br>" + (((turret.kills / game.kills) || 0) * 100).toFixed(2)  + "% of &sum;";
+    $("control-manage-stats").innerHTML = turret.kills + " kills<br>" + (((turret.kills / game.kills) || 0) * 100).toFixed(2) + "% of &sum;";
   }
 };
 
@@ -246,7 +246,7 @@ $("pages-canvas").addEventListener("mousemove", function (evt) {
 
     turret.x = (tx * 5) - 2.5;
     turret.y = (ty * 5) - 2.5;
-    selection.placeable = tx >= 3 && tx <= 158 && ty >= 3 && ty <= 98;
+    selection.placeable = tx >= 3 && tx <= 248 && ty >= 3 && ty <= 117;
 
     for (var i = 5; i--;) {
       for (var ii = 5; ii--;) {
@@ -367,26 +367,26 @@ ui.bind("click", $("pages-start-maps").children, function (evt) {
 
     if (Math.abs(dx) > Math.abs(dy)) {
       cur.x += dx < 0 ? 21 : -16;
-      var m = dy / dx, b = cur.y - m*cur.x;
+      var m = dy / dx, b = cur.y - m * cur.x;
       dx = dx < 0 ? -1 : 1;
 
       while (cur.x !== next.x) {
         cur.x += dx;
 
         for (var i = -3; i <= 4; i++) {
-          game.tiles[Math.round(cur.x / 5) + "," + ((Math.round(m*cur.x + b) / 5) + i)] = true;
+          game.tiles[Math.round(cur.x / 5) + "," + ((Math.round(m * cur.x + b) / 5) + i)] = true;
         }
       }
     } else if (dy !== 0) {
       cur.y += dy < 0 ? 21 : -16;
-      var m = dx / dy, b = cur.x - m*cur.y;
+      var m = dx / dy, b = cur.x - m * cur.y;
       dy = dy < 0 ? -1 : 1;
 
       while (cur.y !== next.y) {
         cur.y += dy;
 
         for (var i = -3; i <= 4; i++) {
-          game.tiles[((Math.round(m*cur.y + b) / 5) + i) + "," + Math.round(cur.y / 5)] = true;
+          game.tiles[((Math.round(m * cur.y + b) / 5) + i) + "," + Math.round(cur.y / 5)] = true;
         }
       }
     }
@@ -398,8 +398,6 @@ ui.bind("click", $("pages-start-maps").children, function (evt) {
   game.start();
   ui.panel("turrets");
   ui.page("canvas");
-
-  _gaq.push(["_trackEvent", "Game", "Start", name]);
 });
 
 ui.handletweets = function (data) {

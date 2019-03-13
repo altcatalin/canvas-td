@@ -101,16 +101,16 @@ module.exports = () => ({
       chunkFilename: '[id].[hash].css'
     }),
     new HtmlWebpackPlugin({
-      template: joinToCwd('src', 'index.html')
+      template: joinToCwd('index.html')
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production'
     }),
     new CopyPlugin([
       { from: joinToCwd('package.json'), to: joinToDist('package.json') },
-      { from: 'src/images', to: 'images' },
-      { from: 'src/scripts', to: 'scripts' },
-      { from: 'src/index.css', to: '' }
+      { from: joinToCwd('images'), to: 'images' },
+      { from: joinToCwd('scripts'), to: 'scripts' },
+      { from: joinToCwd('index.css'), to: '' }
     ].concat(optionalFileRules)),
     new ZipPlugin({
       filename: `${pkg.name}-v${pkg.version}.zip`

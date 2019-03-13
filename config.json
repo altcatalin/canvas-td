@@ -1,0 +1,11 @@
+{
+    "depthClassifierParams": {
+        "frames_until_stable": 7
+    },
+    "turretsMaxHeight": {
+        "Tazer": 30,
+        "Laser": 40,
+        "Missile": 60,
+        "Mortar": 90
+    }
+}

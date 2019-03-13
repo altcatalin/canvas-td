@@ -1,5 +1,19 @@
-A fully featured tower defense game built with &lt;canvas&gt;. https://canvas-td.teddy.io
+# Canvas TD
 
----
+A Tower Defense game with real objects as towers. This is a wrap around [Teddy's Canvas TD](https://canvas-td.teddy.io) for Lampix.
 
-© 2017 [Teddy Cross](https://teddy.io), shared under the [MIT license](https://opensource.org/licenses/MIT).
+[Lampix Apps API](https://api.lampix.co/)
+
+## Usage
+
+-   clone repository
+-   update `config.json` with the maximum heights of the objects that are used as towers
+-   `npm install`
+-   `npm run build`
+-   upload the `.zip` file from `dist-x.y.z` directory to Lampix (directly to device or through MyLampix)
+
+## Todo
+
+-   [ ] implement tower management (move, sell, upgrade etc)
+-   [ ] update UI (buttons etc)
+-   [ ] ...

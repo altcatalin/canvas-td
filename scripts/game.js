@@ -69,8 +69,8 @@ var game = {
     ///////////////////////////////////////////////////////////////////////////////
     // map
     ///////////////////////////////////////////////////////////////////////////////
-    canvas.fillStyle = "#000";
-    canvas.fillRect(0, 0, 800, 500);
+    canvas.fillStyle = "#fff";
+    canvas.fillRect(0, 0, 1250, 700);
 
     var map = game.map.slice(1), start = game.map[0];
     canvas.lineWidth = 40;
@@ -82,7 +82,7 @@ var game = {
     });
     canvas.stroke();
     canvas.lineWidth = 30;
-    canvas.strokeStyle = "#004";
+    canvas.strokeStyle = "#fff";
     canvas.beginPath();
     canvas.moveTo(start.x, start.y);
     map.forEach(function (cur, i) {
@@ -155,6 +155,11 @@ var game = {
         }
       }
 
+      canvas.beginPath();
+      canvas.fillStyle = "rgba(66, 244, 140, .3)";
+      canvas.arc(turret.x, turret.y, turret.range, 0, Math.PI * 2, true);
+      canvas.fill();
+
       canvas.drawImage(turret.img, turret.x - 12.5, turret.y - 12.5);
     });
 
@@ -162,7 +167,7 @@ var game = {
     var turret = selection.turret;
     if (selection) {
       canvas.beginPath();
-      canvas.fillStyle = selection.status === "selected" || selection.placeable ? "rgba(255, 255, 255, .3)" : "rgba(255, 0, 0, .3)";
+      canvas.fillStyle = selection.status === "selected" || selection.placeable ? "rgba(66, 244, 140, .3)" : "rgba(255, 0, 0, .3)";
       canvas.arc(turret.x, turret.y, turret.range, 0, Math.PI * 2, true);
       canvas.fill();
 
@@ -219,12 +224,5 @@ var game = {
 
     ui.panel("score");
     $("pages-overlay").style.display = "block";
-
-    _gaq.push(["_trackEvent", "Game", "End", map]);
-    _gaq.push(["_trackEvent", "Game", "Creeps killed", map, kills]);
-    _gaq.push(["_trackEvent", "Game", "Money spent", map, spent]);
-    _gaq.push(["_trackEvent", "Game", "Money available", map, game.cash]);
-    _gaq.push(["_trackEvent", "Game", "Turrets placed", map, game.turrets.length]);
-    _gaq.push(["_trackEvent", "Game", "Last FPS", map, Number(ui.fps.textContent)]);
   }
 };

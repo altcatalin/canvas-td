@@ -49,16 +49,16 @@ module.exports = () => ({
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: joinToCwd('src', 'index.html')
+      template: joinToCwd('index.html')
     }),
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development'
     }),
     new CopyPlugin([
       { from: joinToCwd('package.json'), to: '' },
-      { from: 'src/images', to: 'images' },
-      { from: 'src/scripts', to: 'scripts' },
-      { from: 'src/index.css', to: '' }
+      { from: joinToCwd('images'), to: 'images' },
+      { from: joinToCwd('scripts'), to: 'scripts' },
+      { from: joinToCwd('index.css'), to: '' }
     ].concat(optionalFileRules))
   ],
   devServer: {

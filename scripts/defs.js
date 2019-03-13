@@ -6,35 +6,35 @@ var Defs = {};
 ///////////////////////////////////////////////////////////////////////////////
 Defs.maps = {
   Loopy: [
-    { x: 0, y: 70 },
-    { x: 730, y: 70 },
-    { x: 730, y: 430 },
-    { x: 70, y: 430 },
-    { x: 70, y: 160 },
-    { x: 640, y: 160 },
-    { x: 640, y: 340 },
-    { x: 160, y: 340 },
-    { x: 160, y: 250 },
-    { x: 800, y: 250 }
+    { x: 0, y: 105 },
+    { x: 1065, y: 105 },
+    { x: 1065, y: 645 },
+    { x: 105, y: 645 },
+    { x: 105, y: 240 },
+    { x: 960, y: 240 },
+    { x: 960, y: 510 },
+    { x: 240, y: 510 },
+    { x: 240, y: 375 },
+    { x: 1200, y: 375 }
   ],
 
   Backtrack: [
-    { x: 0, y: 170 },
-    { x: 120, y: 170 },
-    { x: 120, y: 415 },
-    { x: 460, y: 415 },
-    { x: 460, y: 185 },
-    { x: 230, y: 185 },
-    { x: 230, y: 70 },
-    { x: 345, y: 70 },
-    { x: 345, y: 300 },
-    { x: 700, y: 300 },
-    { x: 700, y: 0 }
+    { x: 0, y: 255 },
+    { x: 180, y: 255 },
+    { x: 180, y: 625 },
+    { x: 690, y: 625 },
+    { x: 690, y: 275 },
+    { x: 345, y: 275 },
+    { x: 345, y: 105 },
+    { x: 515, y: 105 },
+    { x: 515, y: 450 },
+    { x: 1050, y: 450 },
+    { x: 1050, y: 0 }
   ],
 
   Dash: [
-    { x: 0, y: 250 },
-    { x: 800, y: 250 }
+    { x: 0, y: 350 },
+    { x: 1200, y: 350 }
   ]
 };
 
@@ -50,7 +50,7 @@ Defs.turrets.Laser = {
   cost: 15,
   damage: 10,
   rate: 40,
-  range: 80,
+  range: 100,
   upgrades: [
     { damage: 15, rate: 38, range: 85 },
     { damage: 25, rate: 36, range: 90 },
@@ -95,7 +95,7 @@ Defs.turrets.Missile = {
   cost: 25,
   damage: 15,
   rate: 60,
-  range: 120,
+  range: 150,
   upgrades: [
     { damage: 20, rate: 57, range: 125 },
     { damage: 30, rate: 54, range: 130 },
@@ -166,7 +166,7 @@ Defs.turrets.Tazer = {
   cost: 40,
   damage: 1,
   rate: 40,
-  range: 60,
+  range: 75,
   upgrades: [
     { damage: 5, rate: 38, range: 62 },
     { damage: 10, rate: 36, range: 64 },
@@ -215,7 +215,7 @@ Defs.turrets.Mortar = {
   cost: 60,
   damage: 50,
   rate: 120,
-  range: 200,
+  range: 250,
   upgrades: [
     { damage: 75, rate: 115, range: 205 },
     { damage: 100, rate: 110, range: 210 },
