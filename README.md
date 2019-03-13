@@ -1,6 +1,7 @@
 # Canvas TD
 
-A Tower Defense game with real objects as towers. This is a wrap around [Teddy's Canvas TD](https://canvas-td.teddy.io) for Lampix.
+A Tower Defense game with real objects as towers.  
+This is a wrap around [Teddy's Canvas TD](https://canvas-td.teddy.io) for Lampix. The interactions are transformed into mouse events for the legacy app.
 
 [Lampix Apps API](https://api.lampix.co/)
 
@@ -14,6 +15,7 @@ A Tower Defense game with real objects as towers. This is a wrap around [Teddy's
 
 ## Todo
 
+-   [ ] call UI actions directly from watcher's callback and remove event listeners
 -   [ ] implement tower management (move, sell, upgrade etc)
 -   [ ] update UI (buttons etc)
 -   [ ] ...
